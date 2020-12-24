@@ -1,0 +1,21 @@
+body {
+    background-color: #272727 !important;
+}
+.row {
+    font-size: 1.2em;
+    background: #afb7c4;
+    margin: auto;
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+}
