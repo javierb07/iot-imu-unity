@@ -6,9 +6,9 @@ $("#add-button").click(function(event){
     console.log(url);
     let re = /(wss?):\/\/[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9]:[0-6]?[0-9]?[0-9]?[0-9]?[0-9]/;
     if(re.test(url)){
-    ws = new WebSocket(url);
-    ws.onerror = function (event) {
-        alert("Problem establishing communication with IMU WebSocket")
+        ws = new WebSocket(url);
+        ws.onerror = function (event) {
+            alert("Problem establishing communication with IMU WebSocket")
     }
     websocketWaiter();
     ws.onmessage = function (event) {

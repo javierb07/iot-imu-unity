@@ -6,7 +6,7 @@ Tested with 9DoF Razor IMU M0. For a hookup guide look at: https://learn.sparkfu
 
 ## Instructions:
 
-1) Connect IMU to a server and run the websocket program. Take note of the IP address of the server. Optionally, port forward the websocket service to allow connection from any network. Make sure that the IMU is streaming time, accelX, accelY, accelZ, quatW, quatX, quatY, quatZ (in that order), through the serial channel.
+1) Connect IMU to a server and run the websocket program. Take note of the IP address of the server. Optionally, port forward the websocket service to allow connection from any network. However, you will need a domain and a SSL certificate. Additionally, make sure that the IMU is streaming time, accelX, accelY, accelZ, quatW, quatX, quatY, quatZ (in that order), through the serial channel.
 
 2) Open the index.html file and copy the websocket IP. Check that the measurements appear in the table.
 

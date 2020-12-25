@@ -45,12 +45,14 @@ port = 5678
 ipAddress = socket.gethostbyname(socket.gethostname())
 print(ipAddress)
 
+
 async def imu(websocket, path):
     while True:
         imuData = serialComm.readline().decode('ascii')
         print(imuData)
         await websocket.send(imuData)
         await asyncio.sleep(0.05)
+
 
 start_server = websockets.serve(imu, ipAddress, port)
 asyncio.get_event_loop().run_until_complete(start_server)
