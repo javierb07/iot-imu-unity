@@ -11,3 +11,11 @@ Tested with 9DoF Razor IMU M0. For a hookup guide look at: https://learn.sparkfu
 2) Open the index.html file and copy the websocket IP. Check that the measurements appear in the table.
 
 3) Open the Unity program by clicking the Open Unity button. There, you will see a model of the device rotating accordingly to the real hardware.
+
+### Example panel of a connected IMU through WebSocket:
+
+![dashboard][./images/panel_example.JPG]
+
+### Example Unity interface of a connected IMU through WebSocket:
+
+![dashboard][./images/unity_example.JPG]
