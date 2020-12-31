@@ -2,7 +2,9 @@
 
 An IoT inertial measurement unit that exposes data through WebSocket running on a server and a Unity program that connects to it uses data to rotate a game object in real time.
 
-Tested with 9DoF Razor IMU M0. For a hookup guide look at: https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide
+Tested and developed with 9DoF Razor IMU M0. For a hookup guide look at: https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide
+
+Video: https://youtu.be/ljMI-mz-GBQ
 
 ## Instructions:
 
