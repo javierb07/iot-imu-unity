@@ -18,4 +18,4 @@ Tested with 9DoF Razor IMU M0. For a hookup guide look at: https://learn.sparkfu
 
 ### Example Unity interface of a connected IMU through WebSocket:
 
-![dashboard](https://github.com/javierb07/iot-imu-unity/blob/master/images/unity_example.JPG)
+![dashboard](https://github.com/javierb07/iot-imu-unity/blob/main/images/unity_example.JPG)
