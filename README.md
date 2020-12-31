@@ -6,7 +6,7 @@ Tested and developed with 9DoF Razor IMU M0. For a hookup guide look at: https:/
 
 Video: https://youtu.be/ljMI-mz-GBQ
 
-App example: javierb07.github.io/iot-imu-unity/
+App example:  https://javierb07.github.io/iot-imu-unity/
 
 ## Instructions:
 
