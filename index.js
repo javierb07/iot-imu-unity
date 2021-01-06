@@ -32,6 +32,7 @@ $("#add-button").click(function(event){
         alert("Enter only URL or IP");
     }
     websocketWaiter();
+    ws.send("imu");
     ws.onmessage = function (event) {
         var data = event.data.split(',');
         document.getElementById('Time').innerHTML = data[0];
