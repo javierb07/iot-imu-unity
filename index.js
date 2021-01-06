@@ -1,14 +1,35 @@
 var websocketStarted = false;
 var ws;
 $("#add-button").click(function(event){
-    console.log("clicked");
+    var ip = $("#imu-ip").val();
     var url = $("#imu-url").val();
-    console.log(url);
-    let re = /(wss?):\/\/[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9]:[0-6]?[0-9]?[0-9]?[0-9]?[0-9]/;
-    if(re.test(url)){
-        ws = new WebSocket(url);
-        ws.onerror = function (event) {
-            alert("Problem establishing communication with IMU WebSocket")
+    if(ip && !url){
+        let re = /(wss?):\/\/[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9].[0-2]?[0-9]?[0-9]:[0-6]?[0-9]?[0-9]?[0-9]?[0-9]/;
+        let re2 = /(wss?):\/\/localhost:?[0-6]?[0-9]?[0-9]?[0-9]?[0-9]?/
+        if(re.test(ip) || re2.test(ip)){
+            localStorage.setItem("ip", ip);
+            ws = new WebSocket(ip);
+            ws.onerror = function (event) {
+                alert("Problem establishing communication with IMU WebSocket");
+            }
+        } else {
+            alert("Invalid websocket IP");
+        }
+    } 
+    if(!ip && url){
+        let re3 = /(wss?):[\s\S]*/;
+        if(re3.test(url)){
+            localStorage.setItem("url", url);
+            ws = new WebSocket(url);
+            ws.onerror = function (event) {
+                alert("Problem establishing communication with IMU WebSocket");
+            }
+        } else {
+            alert("Invalid websocket URL");
+        }
+    }     
+    if(ip && url){
+        alert("Enter only URL or IP");
     }
     websocketWaiter();
     ws.onmessage = function (event) {
@@ -22,12 +43,8 @@ $("#add-button").click(function(event){
         document.getElementById('Quat y').innerHTML =data[6];
         document.getElementById('Quat z').innerHTML =data[7];
     };
-    } else {
-        alert("Invalid websocket IP");
-    }
 });	
     
-
 
 function websocketWaiter(){
     setTimeout(function(){
