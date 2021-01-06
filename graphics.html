@@ -48,8 +48,10 @@
                 console.log(url);
                 if(ip){
                     ws = new WebSocket(ip);
+                    websocketWaiter();
                 } else if(url){
                     ws = new WebSocket(url);
+                    websocketWaiter();
                 }
                 if(ws){
                     ws.onmessage = function (event) {
@@ -60,6 +62,17 @@
                         z = parseFloat(data[7], 10);
                     };
                 }
+                function websocketWaiter(){
+                    setTimeout(function(){
+                    if (ws.readyState === 1) {
+                            console.log("Connection is made")
+                            ws.send("imu");
+                        } else {
+                            console.log("wait for connection...")
+                            websocketWaiter();
+                        }
+                    }, 5); // wait 5 milisecond for the connection...
+                };
 			}
 
 			function onWindowResize() {
@@ -84,7 +97,7 @@
                     mesh.quaternion.rotateTowards(targetQuaternion, step );
                 }
 				renderer.render( scene, camera );
-			}
+            }          
         </script>
     </body> 
 </html>
