@@ -1,6 +1,6 @@
-# IoT Inertial Measurement Unit Unity Controlled
+# IoT Inertial Measurement Unit 
 
-An IoT inertial measurement unit that exposes data through WebSocket running on a server and a Unity program that connects to it uses data to rotate a game object in real time.
+An IoT inertial measurement unit that exposes data through WebSocket running on a server and a Unity program that connects to it uses data to rotate a game object in real time. Additionally, there is a browser representation of the rotation of the IMU in the browser done using three.js
 
 Tested and developed with 9DoF Razor IMU M0. For a hookup guide look at: https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide
 
