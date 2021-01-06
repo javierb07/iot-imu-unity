@@ -32,9 +32,6 @@ $("#add-button").click(function(event){
         alert("Enter only URL or IP");
     }
     websocketWaiter();
-    if(ws.readyState){
-        ws.send("imu");
-    }
     ws.onmessage = function (event) {
         var data = event.data.split(',');
         document.getElementById('Time').innerHTML = data[0];
@@ -53,6 +50,7 @@ function websocketWaiter(){
     setTimeout(function(){
 		if (ws.readyState === 1) {
                 console.log("Connection is made")
+                ws.send("imu");
             } else {
                 console.log("wait for connection...")
                 websocketWaiter();
