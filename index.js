@@ -50,6 +50,7 @@ function websocketWaiter(){
     setTimeout(function(){
 		if (ws.readyState === 1) {
                 console.log("Connection is made")
+                ws.send("on");
                 ws.send("imu");
             } else {
                 console.log("wait for connection...")

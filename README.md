@@ -14,14 +14,16 @@ App example:  https://javierb07.github.io/iot-imu-unity/
 
 2) Open the index.html file and copy the websocket IP. Check that the measurements appear in the table.
 
-3) Open the Unity program by clicking the Open Graphics button. There, you will see a model of the device rotating accordingly to the real hardware.
+3) Open the three.js program by clicking the Open Graphics button. There, you will see a model of the device rotating accordingly to the real hardware.
 
 4) Open the unity folder in Unity and build a standalone executable of the program. Connect to the websocket and visualize the rotation.
 
+5) In the websocket folder there are Python implementations for WebSockets. Or visit this repo for a Node.js example: https://github.com/javierb07/websocket-example
+
 ### Example panel of a connected IMU through WebSocket:
 
-![dashboard](https://github.com/javierb07/iot-imu-unity/blob/main/images/panel_example.JPG)
+![dashboard](./images/panel_example.JPG)
 
 ### Example Unity interface of a connected IMU through WebSocket:
 
-![dashboard](https://github.com/javierb07/iot-imu-unity/blob/main/images/unity_example.JPG)
+![dashboard](./images/unity_example.JPG)
